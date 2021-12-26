@@ -15,20 +15,25 @@ namespace DNDTreasureGenerator
 
 
 			// Section for generating gems
-            Console.Write("To calculate value and type of gems, enter number of gems:");
-			int gemNum = int.Parse(Console.ReadLine());
-
-			List<string> gemList = Gems.GenerateGemList(gemNum);
-
-			for (int i = 0; i < gemList.Count; i++)
+			if (false)
 			{
-                Console.WriteLine(gemList[i]);
+				Console.Write("To calculate value and type of gems, enter number of gems:");
+				int gemNum = int.Parse(Console.ReadLine());
+
+				List<string> gemList = Gems.GenerateGemList(gemNum);
+
+				for (int i = 0; i < gemList.Count; i++)
+				{
+					Console.WriteLine(gemList[i]);
+				}
 			}
 
 			// armor section
-			var armor = Armor.GetArmor(DataClasses.ItemTier.Minor);
-            Console.WriteLine(armor);
-
+			for(int i = 0; i < 100; i++)
+            {
+				var armor = ArmorFactory.GetArmor(DataClasses.ItemTier.Minor);
+				Console.WriteLine(armor.GetStringRepresentation());
+			}
 		}
     }
 }
